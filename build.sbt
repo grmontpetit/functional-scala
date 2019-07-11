@@ -1,8 +1,13 @@
 
 lazy val root = (project in file("."))
-  .aggregate(`type-classes`)
+  .aggregate(`type-classes`, monoid)
 
 lazy val `type-classes` = (project in file("type-classes"))
+  .settings(
+    commonSettings
+  )
+
+lazy val monoid = (project in file("monoid"))
   .settings(
     commonSettings
   )
