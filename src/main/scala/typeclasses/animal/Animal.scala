@@ -1,4 +1,4 @@
-package animal
+package typeclasses.animal
 
 object Main {
   import Extender._

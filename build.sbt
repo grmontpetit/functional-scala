@@ -1,16 +1,5 @@
 
-lazy val root = (project in file("."))
-  .aggregate(`type-classes`, monoid)
-
-lazy val `type-classes` = (project in file("type-classes"))
-  .settings(
-    commonSettings
-  )
-
-lazy val monoid = (project in file("monoid"))
-  .settings(
-    commonSettings
-  )
+lazy val root = project in file(".")
 
 lazy val commonSettings =
   Seq(
@@ -27,6 +16,9 @@ lazy val commonSettings =
       "-target:jvm-1.8",
       "-encoding", "UTF-8",
       "-Ypartial-unification",
-      "-Ywarn-unused-import"
+      "-Ywarn-unused-import",
+      "-Ypartial-unification"
     )
   )
+
+libraryDependencies += "org.typelevel" %% "cats-core" % "2.0.0-M4"

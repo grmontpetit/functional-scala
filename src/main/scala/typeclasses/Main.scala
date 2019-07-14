@@ -1,4 +1,6 @@
-import Show._
+package typeclasses
+
+import typeclasses.Show.{whatIsType, _}
 
 object Main {
 
